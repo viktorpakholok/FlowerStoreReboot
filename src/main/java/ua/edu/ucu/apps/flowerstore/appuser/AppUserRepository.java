@@ -8,8 +8,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AppUserRepository  extends JpaRepository<AppUser, Long>{
-    @Query("SELECT u FROM app_user u WHERE u.email = ?1")
+public interface AppUserRepository extends JpaRepository<AppUser, Long>{
+    @Query("SELECT u FROM AppUser u WHERE u.email = ?1")
     Optional<AppUser>findUserByEmail(String email);
 
     List<AppUser> findAll();
